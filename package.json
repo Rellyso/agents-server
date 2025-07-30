@@ -1,0 +1,39 @@
+{
+	"devDependencies": {
+		"@biomejs/biome": "2.1.2",
+		"@types/node": "^24.1.0",
+		"drizzle-kit": "^0.31.4",
+		"drizzle-seed": "^0.3.1",
+		"husky": "^9.1.7",
+		"lint-staged": "^16.1.2",
+		"typescript": "^5.8.3",
+		"ultracite": "5.1.2"
+	},
+	"name": "server",
+	"version": "1.0.0",
+	"type": "module",
+	"main": "index.js",
+	"dependencies": {
+		"@fastify/cors": "^11.0.1",
+		"drizzle-orm": "^0.44.4",
+		"fastify": "^5.4.0",
+		"fastify-type-provider-zod": "^5.0.2",
+		"postgres": "^3.4.7",
+		"undici-types": "^7.8.0",
+		"zod": "^4.0.14"
+	},
+	"scripts": {
+		"dev": "node --env-file .env --experimental-strip-types --no-warnings --watch src/server.ts",
+		"start": "node --env-file .env --experimental-strip-types --no-warnings src/server.ts",
+		"db:seed": "node --env-file .env --experimental-strip-types --no-warnings src/db/seed.ts"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"description": "",
+	"lint-staged": {
+		"*.{js,jsx,ts,tsx,json,jsonc,css,scss,md,mdx}": [
+			"npx ultracite format"
+		]
+	}
+}
